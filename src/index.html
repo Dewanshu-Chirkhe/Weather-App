@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Weather App</title>
+        <link rel="icon" href="assets/favicon.ico" type="image/x-icon" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;900&display=swap"
+            rel="stylesheet"
+        />
+    </head>
+    <body>
+        <section class="top-navigation">
+            <div class="search-bar">
+                <input
+                    type="text"
+                    class="location-input"
+                    placeholder="Search for a location"
+                />
+            </div>
+            <div class="units">
+                <button class="unit-btn active" data-unit="c">°C</button>
+                <button class="unit-btn" data-unit="f">°F</button>
+            </div>
+        </section>
+        <section class="general-brief">
+            <div class="top-container">
+                <div class="weather-status-icon">
+                    <img
+                        src="./assets/day/113.svg"
+                        alt="weather status icon"
+                        id="weather-status-icon"
+                    />
+                    <div class="temperature-container">
+                        <span class="temperature" id="temperature">26</span>
+                        <p
+                            class="f-start medium-text"
+                            id="weather-description"
+                        ></p>
+                    </div>
+                </div>
+                <div class="min-max-container">
+                    <div class="max"></div>
+                    <div class="min"></div>
+                </div>
+            </div>
+        </section>
+        <section class="weather-details">
+            <div class="card">Weather 1</div>
+            <div class="card">Weather 2</div>
+            <div class="card">Weather 3</div>
+            <div class="card">Weather 4</div>
+            <div class="card">Weather 5</div>
+            <div class="card">Weather 6</div>
+            <div class="card">Weather 7</div>
+            <div class="card">Weather 8</div>
+        </section>
+        <section class="details">
+            <span>Hourly</span>
+            <div class="hourly-details">
+                <div class="card">Hour 1</div>
+                <div class="card">Hour 2</div>
+                <div class="card">Hour 3</div>
+                <div class="card">Hour 4</div>
+                <div class="card">Hour 5</div>
+                <div class="card">Hour 6</div>
+                <div class="card">Hour 7</div>
+                <div class="card">Hour 8</div>
+            </div>
+            <span>Weekly</span>
+            <div class="weekly-details">
+                <div class="card">Week 1</div>
+                <div class="card">Week 2</div>
+                <div class="card">Week 3</div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+</html>
