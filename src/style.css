@@ -59,22 +59,22 @@ section {
 }
 
 .search-bar {
-    margin-top: 15px;
+    margin-top: 7px;
     width: 70%;
     display: flex;
     align-items: center;
 }
 
 .location-input {
-    height: 50px;
+    height: 40px;
     width: 100%;
     border: none;
-    border-radius: 25px;
+    border-radius: 20px;
     outline: none;
     padding-left: 30px;
     background-color: var(--secondary-dark);
     color: var(--secondary-light);
-    font-size: 1.35rem;
+    font-size: 1rem;
 }
 
 .location-input::placeholder {
@@ -95,7 +95,7 @@ section {
     border: none;
     border-radius: 20px;
     padding: 10px 15px;
-    font-size: 1.1rem;
+    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s ease;
     user-select: none;
@@ -114,7 +114,7 @@ section {
 
 /* general-brief */
 .general-brief {
-    height: 250px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -127,6 +127,13 @@ section {
     width: 100%;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+}
+
+.left-group {
+    display: flex;
+    align-items: flex-end;
+    gap: 0;
 }
 
 .weather-status-icon {
@@ -145,14 +152,22 @@ section {
     -webkit-user-drag: none;
 }
 
-.temperature-container {
-    flex: 1;
+.temperature-container > .temperature {
+    width: 200px;
+    height: 200px;
 }
 
 .temperature-container,
-.min-max-container {
+.min-max-container,
+.weather-status-icon {
     display: flex;
     align-items: flex-end;
+}
+
+.min-max-container {
+    display: flex;
+    align-items: center;
+    gap: 0;
 }
 
 .min-max-container > .min,
@@ -165,7 +180,9 @@ section {
 .details > span {
     color: var(--primary-light);
     font-weight: 400;
-    font-size: xx-large;
+    font-size: x-large;
+    display: inline-block;
+    margin: 10px 0;
 }
 /* weather-details */
 .weather-details {
@@ -177,13 +194,18 @@ section {
     margin-top: 0%;
 }
 
+.weather-details img{
+    width: 25px;
+    height: 25px;
+}
+
 /* hourly-details */
 .hourly-details {
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 10px;
-    height: 150px;
+    height: 100px;
     margin-top: 0%;
 }
 
@@ -193,7 +215,7 @@ section {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(1, 1fr);
     gap: 10px;
-    height: 150px;
+    height: 100px;
     margin-top: 0%;
 }
 
@@ -209,6 +231,6 @@ section {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    transition: transform 0.2s ease, box-shadow 0.2s ease; */
 }
