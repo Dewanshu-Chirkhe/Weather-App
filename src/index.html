@@ -27,72 +27,62 @@
             </div>
         </section>
         <section class="general-brief">
-            <div class="top-container">
-                <div class="left-group">
-                    <div class="weather-status-icon">
-                        <img
-                            src="./assets/day/113.svg"
-                            alt="weather status icon"
-                            id="weather-status-icon"
-                        />
-                    </div>
-                    <div class="temperature-container">
-                        <span>Temperature</span>
-                        <span class="temperature" id="temperature"></span>
-                        <p
-                            class="f-start medium-text"
-                            id="weather-description"
-                        ></p>
-                    </div>
-                </div>
-                <div class="min-max-container">
-                    <div class="min">
-                        <span>Min</span>
-                    </div>
-                    <div class="max">
-                        <span>Max</span>
-                    </div>
+            <div class="weather-icon">
+                <img
+                    src="./assets/day/113.svg"
+                    alt="weather status icon"
+                    id="weather-status-icon"
+                />
+            </div>
+            <div class="temperature-container">
+                <span class="temperature" id="temperature"></span>
+                <p id="weather-description"></p>
+            </div>
+            <div class="location">
+                <img src="./assets/icons/pin.png" alt="pin image">
+                <div class="name-region">
+                    <p id="name"></p>
+                    <p id="region"></p>
                 </div>
             </div>
         </section>
         <section class="weather-details">
             <div class="card" id="chance-rain">
                 <img src="./assets/icons/rain.png" alt="rain" />
-                <span>Chance of rain</span>
+                <span id="rain-info">Chance of rain </span>
             </div>
             <div class="card" id="wind">
                 <img src="./assets/icons/wind.png" alt="wind" />
-                <span>Wind</span>
+                <span id="wind-info">Wind </span>
             </div>
             <div class="card" id="sunrise">
                 <img src="./assets/icons/sunrise.png" alt="sunrise" />
-                <span>Sunrise</span>
+                <span id="sunrise-info">Sunrise </span>
             </div>
             <div class="card" id="sunset">
                 <img src="./assets/icons/sunset.png" alt="sunset" />
-                <span>Sunset</span>
+                <span id="sunset-info">Sunset </span>
             </div>
             <div class="card" id="uv-index">
                 <img src="./assets/icons/uv-index.png" alt="uv" />
-                <span>UV index</span>
+                <span id="uv-info">UV index </span>
             </div>
             <div class="card" id="pressure">
                 <img src="./assets/icons/pressure.png" alt="pressure" />
-                <span>Pressure</span>
+                <span id="pressure-info">Pressure </span>
             </div>
             <div class="card" id="humidity">
                 <img src="./assets/icons/humidity.png" alt="humidity" />
-                <span>Humidity</span>
+                <span id="humidity-info">Humidity </span>
             </div>
-            <div class="card" id="gusts">
-                <img src="./assets/icons/gusts.png" alt="gusts" />
-                <span>Gusts</span>
+            <div class="card" id="gust">
+                <img src="./assets/icons/gusts.png" alt="gust" />
+                <span id="gust-info">Gust </span>
             </div>
         </section>
         <section class="details">
             <span>Hourly</span>
             <div class="hourly-details">
-                <div class="card" id="hour0"></div>
                 <div class="card" id="hour1"></div>
                 <div class="card" id="hour2"></div>
                 <div class="card" id="hour3"></div>
@@ -100,6 +90,7 @@
                 <div class="card" id="hour5"></div>
                 <div class="card" id="hour6"></div>
                 <div class="card" id="hour7"></div>
+                <div class="card" id="hour8"></div>
             </div>
             <span>Weekly</span>
             <div class="weekly-details">
@@ -108,6 +99,5 @@
                 <div class="card" id="day3"></div>
             </div>
         </section>
-        <script src="script.js"></script>
     </body>
 </html>
