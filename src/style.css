@@ -86,7 +86,6 @@ section {
     cursor: pointer;
     transition: background-color 0.3s ease;
     user-select: none;
-    margin-top: 20px;
 }
 
 .unit-btn:hover {
