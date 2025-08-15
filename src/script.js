@@ -5,8 +5,8 @@ const unitButtons = document.querySelectorAll(".unit-btn");
 const tempElem = document.getElementById("temperature");
 const weatherDesc = document.getElementById("weather-description");
 const weatherIcon = document.getElementById("weather-status-icon");
-// const location = document.getElementById("name");
-// const region = document.getElementById("region");
+const location = document.getElementById("name");
+const region = document.getElementById("region");
 
 const API_KEY = "c69c5005f3894a30a7f121423251208";
 let currentUnit = "celsius";
