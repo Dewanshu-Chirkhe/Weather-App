@@ -5,19 +5,18 @@ const unitButtons = document.querySelectorAll(".unit-btn");
 const tempElem = document.getElementById("temperature");
 const weatherDesc = document.getElementById("weather-description");
 const weatherIcon = document.getElementById("weather-status-icon");
-const location = document.getElementById("name");
-const region = document.getElementById("region");
+// const location = document.getElementById("name");
+// const region = document.getElementById("region");
 
 const API_KEY = "c69c5005f3894a30a7f121423251208";
 let currentUnit = "celsius";
 
 locationInput.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-        const location = locationInput.value.trim();
+        const locValue = locationInput.value.trim();
         if (location) {
-            fetchWeather(location);
-            fetchForecast(location);
-            locationInput.value = "";
+            fetchWeather(locValue);
+            fetchForecast(locValue);
         }
     }
 });
@@ -27,9 +26,12 @@ unitButtons.forEach((btn) => {
         unitButtons.forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         currentUnit = btn.dataset.unit === "c" ? "celsius" : "fahrenheit";
+        console.log(currentUnit);
 
-        if (locationInput.value.trim()) {
-            fetchWeather(locationInput.value.trim());
+        const locValue = locationInput.value.trim();
+        if (locValue) {
+            fetchWeather(locValue);
+            fetchForecast(locValue);
         }
     });
 });
@@ -49,13 +51,15 @@ async function fetchWeather(location) {
 }
 
 function updateWeatherUI(data) {
-    tempElem.innerText =
-        currentUnit === "celsius"
-            ? `${data.current.temp_c}°`
-            : `${data.current.temp_f}°`;
+    const temp =
+        currentUnit === "celsius" ? data.current.temp_c : data.current.temp_f;
+
+    tempElem.innerText = `${parseInt(temp)}°`;
+
     const iconUrl = getIconUrl(data.current.condition.icon);
     weatherIcon.src = iconUrl;
     weatherDesc.innerText = data.current.condition.text;
+
     location.innerText = data.location.name;
     region.innerText = data.location.region;
 }
@@ -151,7 +155,8 @@ function updateWeeklyUI(data) {
             const temperature = document.createElement("p");
             temperature.classList.add("temp");
             let unit = currentUnit === "celsius" ? "avgtemp_c" : "avgtemp_f";
-            temperature.innerText = `${data.forecast.forecastday[index].day[unit]}°`;
+            let temp = data.forecast.forecastday[index].day[unit];
+            temperature.innerText = `${Math.round(temp)}°`;
 
             infoContainer.appendChild(date);
             infoContainer.appendChild(temperature);
@@ -170,6 +175,8 @@ function getIconUrl(icon) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+    console.log("scipt loaded");
+    locationInput.value = "Nagpur";
     fetchWeather("Nagpur");
     fetchForecast("Nagpur");
 });

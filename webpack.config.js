@@ -1,6 +1,5 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const Dotenv = require("dotenv-webpack");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
 module.exports = {
@@ -8,7 +7,6 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "dist"),
-        publicPath: "./",
         clean: true, // cleans dist folder before build
     },
     module: {
@@ -23,7 +21,6 @@ module.exports = {
         new HtmlWebpackPlugin({
             template: "./src/index.html",
         }),
-        new Dotenv(),
         new CopyWebpackPlugin({
             patterns: [
                 {
@@ -34,9 +31,13 @@ module.exports = {
         }),
     ],
     devServer: {
-        static: "./dist", // folder to serve
-        hot: true, // enable Hot Module Replacement
-        open: true, // opens browser automatically
+        static: {
+            directory: path.join(__dirname, "dist"),
+        },
+        compress: true,
+        port: 8080,
+        hot: true,
+        open: true,
     },
     mode: "development",
 };

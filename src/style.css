@@ -140,7 +140,7 @@ section {
 #weather-description {
     font-size: 1.2rem;
     margin-left: 0;
-    max-width: 300px;
+    max-width: 200px;
     word-wrap: break-word;
     margin-bottom: 10px;
 }
